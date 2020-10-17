@@ -10,7 +10,7 @@ public interface IContratService {
 	
 	public List<Contrat> getAllContrats();
 
-
+   public Contrat addContrat(Contrat u);
 	
 	
 	
