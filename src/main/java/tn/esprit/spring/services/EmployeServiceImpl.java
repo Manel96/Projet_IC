@@ -37,9 +37,9 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	@Override
-	public int addOrUpdateEmploye(Employe employe) {
+	public Employe addOrUpdateEmploye(Employe employe) {
 		employeRepository.save(employe);
-		return employe.getId();
+		return employe;
 	}
 
 
@@ -104,7 +104,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		return employeManagedEntity.getPrenom();
 	}
 	 
-	public void deleteEmployeById(int employeId)
+	public Employe deleteEmployeById(int employeId)
 	{
 		Employe employe = employeRepository.findById(employeId).get();
 
@@ -116,6 +116,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		}
 
 		employeRepository.delete(employe);
+		return employe;
 	}
 
 	public void deleteContratById(int contratId) {
@@ -160,6 +161,12 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	public List<Employe> getAllEmployes() {
 		return (List<Employe>) employeRepository.findAll();
+	}
+
+	@Override
+	public Employe mettreAjourEmploye(Employe employe) {
+		// TODO Auto-generated method stub
+		return employeRepository.save(employe) ;
 	}
 
 }
