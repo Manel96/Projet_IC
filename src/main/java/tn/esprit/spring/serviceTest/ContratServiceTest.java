@@ -26,14 +26,14 @@ public class ContratServiceTest {
 	
 	
 	
-	@Test
+	/*@Test
 	public void testAddContrat() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
 		Contrat u = new Contrat(d,"CDD",1500 ); 
 		Contrat contratAdded = cs.addContrat(u);
 		assertEquals(u.getTypeContrat(), contratAdded.getTypeContrat());
-	}
+	}*/
 	
 	
 	@Test
