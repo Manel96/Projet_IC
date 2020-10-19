@@ -42,7 +42,7 @@ public class EntrepriseServiceTest {
 	}
 	
 	@Test
-	public void testDeleteEnt(){
+	public void testDeleteEntt(){
 		 String msg=cs.deleteEnt(2);
 		assertEquals("The entreprise has been deleted", msg);
 	
