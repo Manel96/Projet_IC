@@ -33,4 +33,48 @@ public class ContratServiceImpl implements IContratService {
 	}
 
 
+	@Override
+	public Contrat updateContrat(Contrat c) {
+		l.info("in  updateContrat c = " + c);
+		return contratRepository.save(c);
+		
+	}
+
+
+	@Override
+	public String deleteContrat(int id) {
+		Contrat c =contratRepository.findById(id).get();
+		System.out.println("le contrat est "+ c);
+		String msg="No such contract with this id";
+		if(c!=null){
+			contratRepository.deleteById(id);
+			msg="The contract has been deleted";
+		}
+		return msg;
+	}
+
+
+	@Override
+	public List<Contrat> retrieveAllContrats() {
+		l.info("In  retrieveAllContrats: "); 
+		List<Contrat> contrats = (List<Contrat>) contratRepository.findAll();  
+		for (Contrat contrat : contrats) {
+			l.debug("contrat +++ : " + contrat);
+		}
+		l.info("Out of retrieveAllContrats."); 
+		return contrats;
+	}
+
+
+	@Override
+	public Contrat retrieveContratById(int id) {
+		l.info("in  retrieveUser id = " + id);
+	
+		Contrat c=  contratRepository.findById(id).orElse(null);
+	
+		l.info("user returned : " + c);
+		return c;
+	}
+
+
 }
