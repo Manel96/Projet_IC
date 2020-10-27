@@ -38,7 +38,7 @@ public class EmployesServiceTest {
 	public void testRetrieveAllEmployes() {
 		List<Employe> listEmployes = es.getAllEmployes(); 
 		// if there are 3 employes in DB : 
-		assertEquals(4, listEmployes.size());
+		assertEquals(6, listEmployes.size());
 	}
 	
 	
@@ -53,8 +53,8 @@ public class EmployesServiceTest {
        /*delete*/
 	@Test     
 	public void deleteEmployeId() {
-		Employe employeDeleted= es.deleteEmployeById( 3);; 
-		assertEquals(3, employeDeleted.getId());
+		Employe employeDeleted= es.deleteEmployeById( 6);; 
+		assertEquals(6, employeDeleted.getId());
 	}
 
 
