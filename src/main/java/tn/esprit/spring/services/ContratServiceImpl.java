@@ -43,13 +43,14 @@ public class ContratServiceImpl implements IContratService {
 
 	@Override
 	public String deleteContrat(int id) {
+		l.info("In  deleteContrat: "); 
 		Contrat c =contratRepository.findById(id).get();
-		System.out.println("le contrat est "+ c);
 		String msg="No such contract with this id";
 		if(c!=null){
 			contratRepository.deleteById(id);
 			msg="The contract has been deleted";
 		}
+		l.info("Out of  deleteContrat. "); 
 		return msg;
 	}
 
@@ -68,11 +69,11 @@ public class ContratServiceImpl implements IContratService {
 
 	@Override
 	public Contrat retrieveContratById(int id) {
-		l.info("in  retrieveUser id = " + id);
+		l.info("in  retrievContrat id = " + id);
 	
 		Contrat c=  contratRepository.findById(id).orElse(null);
 	
-		l.info("user returned : " + c);
+		l.info("contrat returned : " + c);
 		return c;
 	}
 
