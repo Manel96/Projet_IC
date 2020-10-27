@@ -41,14 +41,17 @@ public class DepartementServiceImpl implements IDepartementService {
 	@Override
 	public Departement UpdateDepartement(Departement d) {
 		// TODO Auto-generated method stub
-		return deptRepoistory.save(d);
+		l.info("Departement Geted. "); 
+		return deptRepoistory.save(d); 
 	}
 
 
 	@Override
 	public void deleteDepartement(String id) {
 		// TODO Auto-generated method stub
-		deptRepoistory.deleteById((int)Long.parseLong(id));;
+		l.info("in  retrieveUDepartement id = " + id);
+		deptRepoistory.deleteById((int)Long.parseLong(id));
+		l.info("departmenet deleted ");
 	}
 
 
